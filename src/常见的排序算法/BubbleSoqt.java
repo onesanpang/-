@@ -4,13 +4,18 @@ public class BubbleSoqt {
     public static void main(String[] args) {
         int[] a = {9,3,5,4,2,1,6,7,8};
         for(int i=0;i<a.length;i++){
+            boolean flag = false;
             for(int j=0;j<a.length-i-1;j++){
                 if (a[j]>a[j+1]){
                     int temp = a[j+1];
                     a[j+1] = a[j];
                     a[j] = temp;
+                    flag = true;
                 }
             }
+           if (!flag){
+                break;
+           }
         }
 
         for (int i: a){
